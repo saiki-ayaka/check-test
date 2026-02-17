@@ -3,14 +3,14 @@ markdown
 
 ## 1. セットアップ手順
     リポジトリのクローン
-    ・git clone "リポジトリURL"
-    ・cd checktest_contact-form
+    ・git clone https://github.com/saiki-ayaka/check-test.git
+    ・cd check-test
     コンテナの起動
     ・docker-compose up -d --build
     ライブラリのインストール
     ・docker-compose exec php composer install
     環境設定ファイル,アプリケーションキーの生成を行う。
-    ・cp .env.example .env
+    ・cp src/.env.example src/.env
     ・docker-compose exec php php artisan key:generate
     マイグレーションの実行を行う。データベースにテーブルを作成する。
     ・docker-compose exec php php artisan migrate
