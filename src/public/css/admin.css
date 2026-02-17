@@ -1,4 +1,3 @@
-/* 全体のレイアウト */
 .admin__content {
     background-color: #fff;
     min-height: 100vh;
@@ -21,7 +20,6 @@
         font-style: normal;
 }
 
-/* 検索フォーム */
 .search-form__inner {
     display: flex;
     justify-content: center;
@@ -43,51 +41,41 @@
 
 .search-form__item input[name="keyword"] {
     width: 300px;
-    /* 文字数に合わせて調整。300px〜350px程度が目安です */
     padding: 10px;
-    /* 内側に余白を作るとより見やすくなります */
     box-sizing: border-box;
-    /* パディングを含めた幅固定設定 */
 }
 
-/* もしスマホなどの画面幅が狭い時に、はみ出さないようにする設定 */
+/* もしスマホなど画面幅が狭い時、はみ出さないようにしたい*/
 @media screen and (max-width: 768px) {
     .search-form__item input[name="keyword"] {
         width: 100%;
-        /* モバイルでは横幅いっぱいにする */
     }
 }
 
-/* 名前・メールアドレスの入力欄だけを白にする */
 .search-form__item input[type="text"] {
     background-color: #fff;
 }
 
-/* 性別・種類・日付（これらはグレーのまま） */
 .search-form__item select,
 .search-form__item input[type="date"] {
     background-color: #f4f4f4;
 }
 
-/* カレンダーアイコンを消して「▼」を表示する */
 .search-form__item input[type="date"] {
     position: relative;
     appearance: none;
-    /* 標準のスタイルをリセット */
     -webkit-appearance: none;
 }
 
-/* 標準のカレンダーアイコンを非表示にする */
+/* 標準アイコンを非表示に */
 .search-form__item input[type="date"]::-webkit-calendar-picker-indicator {
     position: absolute;
     right: 10px;
     cursor: pointer;
     z-index: 1;
     opacity: 0;
-    /* アイコンを透明にしてクリック判定だけ残す */
 }
 
-/* 疑似要素で「▼」を描画する */
 .search-form__item:has(input[type="date"]) {
     position: relative;
 }
@@ -99,13 +87,10 @@
     top: 50%;
     transform: translateY(-50%);
     color: #ccc;
-    /* 他の項目と合わせた茶色 */
     font-size: 0.7rem;
     pointer-events: none;
-    /* クリックを邪魔しない */
 }
 
-/* 検索・リセットボタン */
 .search-form__button {
     display: flex;
     gap: 10px;
@@ -128,7 +113,6 @@
     font-size: 0.9rem;
 }
 
-/* ★ サブヘッダー：エクスポートを左、ページネーションを右に分ける */
 .admin__sub-header {
     display: flex;
     justify-content: space-between;
@@ -146,12 +130,10 @@
     cursor: pointer;
 }
 
-/* --- ページネーション --- */
 .pagination {
     margin: 0;
 }
 
-/* 巨大な矢印(SVG)と不要なテキストを徹底的に消す */
 .pagination svg,
 .pagination p,
 .pagination nav>div:first-child,
@@ -159,7 +141,6 @@
     display: none !important;
 }
 
-/* ページネーションのリスト構造 */
 .pagination ul {
     display: flex;
     list-style: none;
@@ -190,14 +171,12 @@
     box-sizing: border-box;
 }
 
-/* 現在のページ */
 .pagination li[aria-current="page"] span,
 .pagination li.active span {
     background-color: #827264 !important;
     color: #fff !important;
 }
 
-/* テーブルスタイル */
 .admin__table-container {
     max-width: 1000px;
     margin: 0 auto;
@@ -206,16 +185,8 @@
 
 .admin__table tbody tr:hover {
     background-color: #f5f5f5;
-    /* マウスが乗った時の色（薄いグレー） */
     transition: background-color 0.3s ease;
-    /* ふんわり色を変える */
     cursor: pointer;
-    /* カーソルを指マークにする（任意） */
-}
-
-/* 偶数行の色を変えている（ストライプ）場合、ホバーを優先させる設定 */
-.admin__table tbody tr:nth-child(even):hover {
-    background-color: #f5f5f5;
 }
 
 .admin__table {
@@ -257,7 +228,6 @@
     cursor: pointer;
 }
 
-/* モーダル（省略なし） */
 .modal {
     display: none;
     position: fixed;
@@ -283,30 +253,21 @@
 .modal__close {
     position: absolute;
     right: 20px;
-    /* 右端からの距離 */
     top: 20px;
-    /* 上端からの距離 */
     width: 30px;
-    /* 円の大きさ */
     height: 30px;
     display: flex;
-    /* バツ印を真ん中に置くため */
     align-items: center;
-    /* 上下中央 */
     justify-content: center;
-    /* 左右中央 */
 
     cursor: pointer;
     color: #8b7969;
     background-color: #fff;
     border: 1px solid #8b7969;
-    /* 線を「1px」にして細く */
     border-radius: 50%;
 
     font-size: 14px;
-    /* バツ印を小さく */
     font-weight: 100;
-    /* バツ印を細く */
     line-height: 1;
     padding-bottom: 2px;
 }
@@ -338,10 +299,7 @@
 }
 
 #modal-tel {
-    /* Georgiaは標準でオールドスタイルに近い、あるいは対応していることが多いフォントです */
-    font-family: "Georgia", "Merriweather", serif;
-
-    /* 数字のスタイルを強制する設定（複数記述で互換性を高めます） */
+    font-family: "Georgia", serif;
     font-variant-numeric: oldstyle-nums;
     -moz-font-feature-settings: "onum";
     -webkit-font-feature-settings: "onum";
@@ -362,7 +320,6 @@
 .search-form__button-reset,
 .search-form__button-submit,
 .admin__table td {
-    /* 英数字はMerriweather、日本語は標準ゴシック(sans-serif) */
     font-family: "Merriweather", "Hiragino Sans", "Meiryo", sans-serif;
     font-size: 0.9em;
 }

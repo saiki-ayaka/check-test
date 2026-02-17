@@ -20,7 +20,6 @@
     font-weight: normal;
 }
 
-/* 確認テーブルのデザイン */
 .confirm-table {
     width: 100%;
     margin-bottom: 60px;
@@ -30,7 +29,6 @@
 
 .confirm-table tr {
     border-bottom: 1px solid #E0E0E0;
-    /* 項目ごとに薄い境界線を入れると見やすい */
 }
 
 .confirm-table tr:last-child {
@@ -55,7 +53,6 @@
     font-size: 17px;
 }
 
-/* ボタンエリア */
 .form__button {
     margin-top: 40px;
     text-align: center;
@@ -66,7 +63,6 @@
     gap: 30px;
 }
 
-/* 送信ボタン（入力画面の共通パーツがあればそれを優先） */
 .form__button-submit {
     background-color: #8B7969;
     color: #FFFFFF;
@@ -82,7 +78,6 @@
     opacity: 0.8;
 }
 
-/* 修正ボタン（テキストリンク風にするのが今のトレンドです） */
 .form__button-modify {
     background: none;
     border: none;
