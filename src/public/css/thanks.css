@@ -1,0 +1,78 @@
+/* コンテナを画面いっぱいに広げ、中央揃えにする */
+.thanks__container {
+    position: relative;
+    height: 100vh;
+    /* ヘッダーがないので画面全体を使用 */
+    max-width: 1200px;
+        /* 画面幅を制限 */
+    margin: 0 auto;
+        /* 左右中央寄せ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* 背景文字のはみ出し防止 */
+    background-color: #fff;
+}
+
+/* 背景の大きな透過文字 */
+.thanks__background-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* コンテナ内の真ん中に固定 */
+    font-size: 10rem;
+    /* 15remは大きすぎる場合があるので少し調整 */
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.03);
+    white-space: nowrap;
+    z-index: 1;
+    pointer-events: none;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* 中央のメッセージとボタン */
+.thanks__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    /* ↓ここを追加 */
+    width: 100%;
+    /* 画面が小さい時は100% */
+    max-width: 1200px;
+    /* 最大幅を1200pxに制限 */
+    margin: 0 auto;
+    /* 左右中央に配置 */
+    padding: 0 20px;
+    /* スマホ等で端にぴったり付かないよう余白を確保 */
+    box-sizing: border-box;
+    /* パディングを含めた幅計算にする */
+}
+
+.thanks__message {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #8b7969;
+    font-weight: bold;
+}
+
+/* HOMEボタン */
+.thanks__home-btn {
+    display: inline-block;
+    background-color: #8b7969;
+    /* 画像に近いブラウン系 */
+    color: #fff;
+    padding: 10px 40px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-family:'Noto Sans JP',
+        'Playfair Display',
+        'Rokkitt',
+        sans-serif;
+    transition: opacity 0.3s;
+}
+
+.thanks__home-btn:hover {
+    opacity: 0.8;
+}

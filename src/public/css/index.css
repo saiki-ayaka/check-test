@@ -1,0 +1,214 @@
+/* --- 1. 全体の基本設定 --- */
+body {
+    font-family: "Noto Serif JP", serif;
+    background-color: #ffffff;
+    color: #8B7969;
+    /* メインの薄茶色 */
+    line-height: 1.6;
+}
+
+.contact-form__content {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+/* タイトル（明朝体） */
+.contact-form__heading h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 60px;
+    font-weight: normal;
+}
+
+/* --- 2. フォームのレイアウト --- */
+.form__group {
+    display: flex;
+    margin-bottom: 15px;
+    /* 5pxより少し広げ、窮屈さを解消（お好みで調整） */
+    align-items: flex-start;
+}
+
+.form__group-title {
+    width: 300px;
+    font-size: 16px;
+    padding-top: 14px;
+    /* 入力欄との高さを合わせる */
+    font-family: "Noto Sans JP", sans-serif;
+    /* 項目名はゴシック */
+    font-weight: 500;
+}
+
+.form__label--required {
+    color: #ee7575;
+    margin-left: 4px;
+}
+
+.form__group-content {
+    flex: 1;
+}
+
+/* --- 3. 入力フィールド（共通） --- */
+.form__input--text input,
+.form__input--select select,
+.form__input--text textarea {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    background-color: #f4f4f4 !important;
+    /* 基本はグレー */
+    color: #8B7969 !important;
+    /* 入力文字も薄茶色 */
+    font-size: 14px;
+    box-sizing: border-box;
+    font-family: 'Playfair Display','Rokkitt',sans-serif !important;
+    font-variant-numeric: oldstyle-nums !important;
+    font-feature-settings: "onum" 1 !important;
+    transition: background-color 0.3s;
+    /* 色の変化を滑らかに */
+    outline: none;
+}
+
+/* プレースホルダー（入力前の文字） */
+::placeholder {
+    color: #b0957d !important;
+    opacity: 0.8;
+    font-family: 'Playfair Display',
+        'Rokkitt',
+        sans-serif !important;
+    font-variant-numeric: oldstyle-nums !important;
+    font-feature-settings: "onum" 1 !important;
+}
+
+/* --- 4. フォーカス時（入力中）のスタイル --- */
+.form__input--text input:focus,
+.form__input--select select:focus,
+.form__input--text textarea:focus {
+    background-color: #e8f4fd !important;
+    /* 入力中のみ水色 */
+}
+
+/* 自動入力（オートフィル）時の青みを防止 */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #f4f4f4 inset !important;
+    -webkit-text-fill-color: #8B7969 !important;
+}
+
+/* --- 5. 特定項目の個別スタイル --- */
+
+
+/* お名前の間隔 */
+.form__input--name {
+    gap: 50px;
+}
+
+/* 電話番号の間隔と中央揃え */
+.form__input--text {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+
+/* --- 6. セレクトボックス（カスタマイズ） --- */
+.form__input--select {
+    position: relative;
+    width: 60%;
+    /* 横幅を少し調整 */
+}
+
+.form__input--select select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 40px;
+    color: #8B7969;
+}
+
+.form__input--select select:invalid {
+    color: #d6b394;
+    /* 薄い茶色 */
+    opacity: 0.8;
+}
+
+/* 横広の三角形（▼） */
+.form__input--select::after {
+    content: "";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 7px solid #b0957d;
+    /* 矢印の色 */
+    pointer-events: none;
+}
+
+/* --- 7. ラジオボタン（カスタマイズ） --- */
+.form__input--radio {
+    display: flex;
+    gap: 40px;
+    padding-top: 10px;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.form__input--radio input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #8B7969;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-right: 8px;
+    position: relative;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+/* 選択された時：中に小さな丸を作る（より上品な印象になります） */
+.form__input--radio input[type="radio"]:checked {
+    background-color: #8B7969;
+    border-color: #8B7969;
+}
+
+/* --- 8. その他 --- */
+.form__input--text textarea {
+    height: 160px;
+    resize: none;
+    line-height: 1.8;
+}
+
+.form__button {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.form__button-submit {
+    background-color: #8B7969;
+    color: #fff;
+    padding: 14px 80px;
+    border: none;
+    font-size: 16px;
+    font-family: "Noto Sans JP", sans-serif;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.form__button-submit:hover {
+    opacity: 0.8;
+}
+
+.form__error {
+    color: #ee7575;
+    /* 必須マークと同じ赤色 */
+    font-family: "Noto Sans JP", sans-serif;
+    /* ゴシック体 */
+    font-size: 14px;
+    margin-top: 8px;
+    /* 入力欄との間に少し隙間を作る */
+    font-weight: 500;
+}

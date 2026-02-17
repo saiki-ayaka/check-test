@@ -1,0 +1,99 @@
+/* 全体の背景 */
+.register__content {
+    background-color: #f5efea;
+    /* ベージュ */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0;
+    box-sizing: border-box;
+}
+
+/* Registerの見出し */
+.register__heading h2 {
+    font-family: 'Rokkitt', serif;
+        font-optical-sizing: auto;
+        font-weight: 300;
+        font-style: normal;
+    color: #8b7969;
+    font-size: 32px;
+    margin-bottom: 60px;
+}
+
+/* 白い入力エリア */
+.register-form__container {
+    background-color: #fff;
+    width: 90%;
+    max-width: 600px;
+    padding: 50px 80px;
+    border-radius: 10px;
+    border: 1px solid #cbb49f;
+    box-sizing: border-box;
+}
+
+/* 各入力項目のまとまり */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #8b7969;
+    font-size: 1.1rem;
+}
+
+/* 入力ボックス */
+.register-form input {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #f7f7f7;
+    border: none;
+    box-sizing: border-box;
+        /* パディングでの幅崩れを防止 */
+    color: #333;
+    font-size: 1rem
+}
+
+input::placeholder {
+    font-family: "Playfair Display",
+        "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans",
+        "Meiryo",
+        sans-serif;
+    font-size: 0.8rem;
+    color: #cbb49f;
+    opacity: 1;
+        /* Firefox対策 */
+}
+
+/* 登録ボタンのエリア */
+.form-button {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* 登録ボタン */
+.register-form button {
+    background-color: #8b7969;
+    /* ブラウン */
+    color: #fff;
+    border: none;
+    padding: 10px 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.register-form button:hover {
+    opacity: 0.8;
+}
+
+/* 追加：バリデーションエラーの表示場所 */
+.form__error {
+    color: #ee7575;
+    /* 警告用の赤 */
+    font-size: 0.8rem;
+    margin-top: 5px;
+}

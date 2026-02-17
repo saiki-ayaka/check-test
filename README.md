@@ -19,6 +19,7 @@ markdown
 
 ## 2. 開発環境/アクセスURL
     ・お問い合わせ画面:　http://localhost
+    ・ユーザー登録画面:　http://localhost/register
     ・phpMyAdmin:　http://localhost:8080
 
 ## 3. 使用技術(実行環境)
